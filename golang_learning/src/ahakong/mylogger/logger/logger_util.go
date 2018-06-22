@@ -3,6 +3,7 @@ package logger
 import (
 	"fmt"
 	"runtime"
+	"time"
 )
 
 const(
@@ -107,6 +108,11 @@ func getlineinfo() (filename string, funcname string, lineno int) {
 	return
 }
 
+func gettimeinfo() (string) {
+	now := time.Now()
+	timeinfo := now.Format("2006-01-02 15:04:05.999")
+	return timeinfo
+}
 
 
 
