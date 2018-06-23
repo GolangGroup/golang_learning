@@ -1,13 +1,12 @@
-package logger
+package tlogger
+
 
 import (
 	"fmt"
 	"runtime"
-	"time"
 )
-
 const(
-	LOGLEVELDEBUG=iota
+	LOGLEVELDEBUG=iota+2
 	LOGLEVELTRACE
 	LOGLEVELINFO
 	LOGLEVELWARN
@@ -55,7 +54,7 @@ func levelstrtolevel(levelstr string)int {
 	}
 }
 
-var log LoggerInterface
+var log ilog
 
 func InitLogger(logtype string, levelstr string, path string) {
 	level := levelstrtolevel(levelstr)
@@ -107,13 +106,3 @@ func getlineinfo() (filename string, funcname string, lineno int) {
 	}
 	return
 }
-
-func gettimeinfo() (string) {
-	now := time.Now()
-	timeinfo := now.Format("2006-01-02 15:04:05.999")
-	return timeinfo
-}
-
-
-
-
