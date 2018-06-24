@@ -10,7 +10,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 	method := r.Method
 	if method == "GET" {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		t, err := template.ParseFiles("./login2.html")
+		t, err := template.ParseFiles("./login.html")
 		if err != nil {
 			fmt.Fprintf(w, "load login.html failed")
 			return
