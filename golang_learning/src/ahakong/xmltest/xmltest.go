@@ -8,7 +8,7 @@ import (
 
 type Servers struct {
 	Name xml.Name `xml:"servers"`
-	Version string `xml:"version, attr"`
+	Version string `xml:"version,attr"`
 	Servers []Server `xml:"server"`
 }
 
